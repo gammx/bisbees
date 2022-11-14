@@ -1,0 +1,79 @@
+@function str-split($string, $separator) {
+    $i: str-index($string, $separator);
+    @if ($i != null) {
+        @return join(
+            str-slice($string, 1, $i - 1),
+            str-split(str-slice($string, $i + str-length($separator)), $separator)
+        );
+    }
+    @return $string;
+}
+
+// It returns the src property value for a font family
+@function font-source($font_family, $font_path) {
+    $splitted_path: str-split($font_path, '.');
+    $file_name: nth($splitted_path, 1);
+    $file_extensions: nth($splitted_path, 2);
+    $ext_list: str-split($file_extensions, ',');
+    $source: '';
+    @each $extension in $ext_list {
+        $format: $extension;
+        // Some format names do not match their extensions
+        @if ($extension == 'ttf') {
+            $format: 'truetype';
+        } @else if ($extension == 'otf') {
+            $format: 'opentype';
+        }
+        $instruction: 'url("/fonts/#{$font_family}/#{$file_name}.#{$extension}") format("#{$format}")';
+        // We add a comma to concatenate all the format definitions
+        @if (index($ext_list, $extension) != length($ext_list)) {
+            $instruction: str-insert($instruction, ', ', 100);
+        }
+        $source: str-insert($source, $instruction, 1000)
+    }
+    @return unquote($source);
+}
+
+@mixin generate-font-faces($fontFamily, $weights) {
+    @each $fontPath, $fontWeight in $weights {
+        @font-face {
+            font-family: $fontFamily;
+            src: font-source($fontFamily, $fontPath);
+            font-weight: $fontWeight;
+            font-display: swap;
+
+            @if (str-index($fontPath, 'Italic') or str-index($fontPath, 'Oblique')) {
+                font-style: italic;
+            } @else {
+                font-style: normal;
+            }
+        }
+    }
+}
+
+@include generate-font-faces('Avenir', (
+    'Avenir-Light.woff,woff2': 300,
+    'Avenir-LightOblique.woff,woff2': 300,
+    'Avenir-Roman.woff,woff2': 400,
+    'Avenir-RomanOblique.woff,woff2': 400,
+    'Avenir-Medium.woff,woff2': 500,
+    'Avenir-MediumOblique.woff,woff2': 500,
+    'Avenir-Heavy.woff,woff2': bold,
+    'Avenir-HeavyOblique.woff,woff2': bold,
+    'Avenir-Black.woff,woff2': 900,
+    'Avenir-BlackOblique.woff,woff2': 900,
+));
+
+@include generate-font-faces('AvenirBook', (
+    'Avenir-Book.woff,woff2': 400,
+    'Avenir-BookOblique.woff,woff2': 400,
+));
+
+@include generate-font-faces('RocGrotesk', (
+    'RocGrotesk-Regular.woff2': 400,
+    'RocGrotesk-Bold.woff2': bold,
+));
+
+@include generate-font-faces('Marcellus', (
+    'Marcellus-Regular.woff2': 400
+));

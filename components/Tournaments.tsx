@@ -18,7 +18,7 @@ const Tournaments = () => {
 					></div>
 				</div>
 				<div className="relative flex-1 flex justify-center text-white">
-					<div className="flex flex-col relative lg:-top-20 max-w-[100%] xs:max-w-[80vw] lg:max-w-[44vw] xl:max-w-[48vw] px-2 xs:px-0">
+					<div className="flex flex-col relative lg:-top-20 max-w-[100%] xs:max-w-[80vw] lg:max-w-[44vw] xl:max-w-[48vw] px-2 xs:px-0 z-10">
 						<div>
 							<h1 className="font-medium uppercase -tracking-[0.08em] text-center lg:text-left text-[12vw] lg:text-[7.1vw] xl:text-[8vw]">
 								{tournament.name}
@@ -30,7 +30,7 @@ const Tournaments = () => {
 						</div>
 						<div className="flex-1 flex justify-center pt-24">
 							<div className="flex w-[700px] lg:w-[500px] max-w-[700px]">
-								<div className="pt-8 pr-4 sm:px-9">
+								<div className="pt-8 pr-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer">
 									<ChevronBack size={24} />
 								</div>
 								<div className="flex-1 text-xs">
@@ -48,9 +48,9 @@ const Tournaments = () => {
 											<span className="font-book">$71,500.00</span>
 										</div>
 									</div>
-									<a href="" className="w-full h-10 flex items-center justify-center font-bold uppercase rounded-md border border-white mt-12">Tell Me More</a>
+									<a href="" className="w-full h-10 flex items-center justify-center font-bold uppercase rounded-md border border-white mt-12 transition-colors duration-100 hover:bg-white hover:text-royale">Tell Me More</a>
 								</div>
-								<div className="pt-8 pl-4 sm:px-9">
+								<div className="pt-8 pl-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer">
 									<ChevronForward size={24} />
 								</div>
 							</div>

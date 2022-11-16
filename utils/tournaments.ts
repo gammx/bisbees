@@ -17,6 +17,22 @@ const tournaments = [
 		href: '#',
 		thumbnail: '/tournaments/bb/details_thumbnail.png',
 	},
+	{
+		id: 'ec',
+		name: 'East Cape',
+		quote: {
+			text: "Vintage & classy, loving the old Mexico",
+			by: 'Don Cheto'
+		},
+		birdDeadline: '2023-06-30',
+		startDate: '2023-08-01',
+		endDate: '2023-08-05',
+		baseEntry: 1500,
+		acrossTheBoard: 32000,
+		shadowColors: ['#FF2E00', '#F09000'],
+		thumbnail: '/tournaments/ec/details_thumbnail.png',
+		href: '#',
+	}
 ];
 
 export default tournaments;

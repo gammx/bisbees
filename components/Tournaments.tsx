@@ -8,12 +8,16 @@ const Tournaments = () => {
 	return (
 		<section>
 			<div
-				className="bg-royale flex flex-col lg:flex-row lg:space-x-14 lg:justify-center lg:px-16 pt-24 md:pt-40"
+				className="bg-royale overflow-hidden flex flex-col lg:flex-row lg:space-x-14 lg:justify-center lg:px-16 pt-24 md:pt-40"
 			>
-				<div className="flex items-center justify-center">
-					<img src={tournament.thumbnail} alt="" className="w-[70vw] lg:w-auto" />
+				<div className="relative flex items-center justify-center">
+					<img src={tournament.thumbnail} alt="" className="w-[70vw] lg:w-auto z-10" />
+					<div
+						className="absolute top-0 left-0 lg:left-auto lg:right-0 w-[250px] sm:w-[370px] h-[250px] sm:h-[350px] rounded-full opacity-40 blur-[150px] "
+						style={{ backgroundColor: tournament.shadowColors[0] }}
+					></div>
 				</div>
-				<div className="flex-1 flex  justify-center text-white">
+				<div className="relative flex-1 flex justify-center text-white">
 					<div className="flex flex-col relative lg:-top-20 max-w-[100%] xs:max-w-[80vw] lg:max-w-[44vw] xl:max-w-[48vw] px-2 xs:px-0">
 						<div>
 							<h1 className="font-medium uppercase -tracking-[0.08em] text-center lg:text-left text-[12vw] lg:text-[7.1vw] xl:text-[8vw]">
@@ -39,7 +43,7 @@ const Tournaments = () => {
 											<span className="font-bold">Base Entry</span>
 											<span className="font-book">$5,000.00</span>
 										</div>
-										<div className="w-full flex justify-between uppercase">
+										<div className="w-full flex justify-between uppercase text-[#CF9763]">
 											<span className="font-bold">Across The Board</span>
 											<span className="font-book">$71,500.00</span>
 										</div>
@@ -52,6 +56,10 @@ const Tournaments = () => {
 							</div>
 						</div>
 					</div>
+					<div
+						className="absolute -bottom-24 right-0 w-[250px] sm:w-[300px] h-[250px] sm:h-[300px] rounded-full opacity-40 blur-[150px]"
+						style={{ backgroundColor: tournament.shadowColors[1] }}
+					></div>
 				</div>
 			</div>
 		</section>

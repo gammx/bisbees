@@ -1,9 +1,20 @@
 import React from 'react';
+import moment from 'moment';
 import tournaments from '../utils/tournaments';
 import { ChevronBack, ChevronForward } from '@styled-icons/ionicons-outline';
 
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+	style: 'currency',
+	currency: 'USD',
+});
+
 const Tournaments = () => {
 	const [tournament, setTournament] = React.useState(tournaments[0]);
+	const [dates, setDates] = React.useState({
+		start: moment(tournament.startDate),
+		end: moment(tournament.endDate),
+		birdDeadline: moment(tournament.birdDeadline),
+	});
 
 	return (
 		<section>
@@ -25,7 +36,7 @@ const Tournaments = () => {
 							</h1>
 							<div className="-tracking-[0.08em] font-book w-full flex items-center flex-col md:flex-row md:justify-between text-xs xl:text-base">
 								<blockquote><span className="italic">"{tournament.quote.text}"</span> — {tournament.quote.by}</blockquote>
-								<span>October 24 — 28, 2023</span>
+								<span>{dates.start.format('MMMM DD')} — {dates.end.format('DD, YYYY')}</span>
 							</div>
 						</div>
 						<div className="flex-1 flex justify-center pt-24">
@@ -37,15 +48,15 @@ const Tournaments = () => {
 									<div className="space-y-4">
 										<div className="w-full flex justify-between uppercase">
 											<span className="font-bold">Early Bird Deadline</span>
-											<span className="font-book">August 31, 2023</span>
+											<span className="font-book">{dates.birdDeadline.format('MMMM DD, YYYY')}</span>
 										</div>
 										<div className="w-full flex justify-between uppercase">
 											<span className="font-bold">Base Entry</span>
-											<span className="font-book">$5,000.00</span>
+											<span className="font-book">{currencyFormatter.format(tournament.baseEntry)}</span>
 										</div>
 										<div className="w-full flex justify-between uppercase text-[#CF9763]">
 											<span className="font-bold">Across The Board</span>
-											<span className="font-book">$71,500.00</span>
+											<span className="font-book">{currencyFormatter.format(tournament.acrossTheBoard)}</span>
 										</div>
 									</div>
 									<a href="" className="w-full h-10 flex items-center justify-center font-bold uppercase rounded-md border border-white mt-12 transition-colors duration-100 hover:bg-white hover:text-royale">Tell Me More</a>

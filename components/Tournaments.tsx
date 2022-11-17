@@ -11,7 +11,7 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
 });
 
 const Tournaments = () => {
-	const [tournament, setTournament] = React.useState(tournaments[1]);
+	const [tournament, setTournament] = React.useState(tournaments[0]);
 	const [dates, setDates] = React.useState({
 		start: moment(tournament.startDate),
 		end: moment(tournament.endDate),
@@ -20,20 +20,20 @@ const Tournaments = () => {
 	const [thumbnailStyles, thumbnailApi] = useSpring(() => (animations.slideUp));
 	const [headingStyles, headingApi] = useSpring(() => (animations.scaleIn));
 	// Animated currency values
-	const [isEntryAnimated, setIsEntryAnimated] = React.useState(false);
-	const [isPrizeAnimated, setIsPrizeAnimated] = React.useState(false);
+	const [isEntryAnimated, setIsEntryAnimated] = React.useState(true);
+	const [isPrizeAnimated, setIsPrizeAnimated] = React.useState(true);
 	const { val: baseEntry } = useSpring({
 		val: tournament.baseEntry, from: { val: 0 },
-		onStart: () => setIsEntryAnimated(false),
-		onRest: () => setIsEntryAnimated(true)
+		onStart: () => setIsEntryAnimated(true),
+		onRest: () => setIsEntryAnimated(false)
 	});
 	const { val: acrossTheBoard } = useSpring({
 		val: tournament.acrossTheBoard, from: { val: 0 },
-		onStart: () => setIsPrizeAnimated(false),
-		onRest: () => setIsPrizeAnimated(true)
+		onStart: () => setIsPrizeAnimated(true),
+		onRest: () => setIsPrizeAnimated(false),
 	});
 
-	const slideToFollowing = (direction: 'previous' | 'next') => {
+	const moveSlideshow = (direction: 'previous' | 'next') => {
 		thumbnailApi.start({
 			...animations.slideDown,
 			config: config.stiff,
@@ -87,7 +87,7 @@ const Tournaments = () => {
 							<div className="flex w-[700px] lg:w-[500px] max-w-[700px]">
 								<div
 									className="pt-8 pr-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
-									onClick={() => slideToFollowing('previous')}
+									onClick={() => moveSlideshow('previous')}
 								>
 									<ChevronBack size={24} />
 								</div>
@@ -100,17 +100,17 @@ const Tournaments = () => {
 										<div className="w-full flex justify-between uppercase">
 											<span className="font-bold">Base Entry</span>
 											{isEntryAnimated ? (
-												<span className="font-book">{currencyFormatter.format(baseEntry.get())}</span>
-											) : (
 												<animated.span className="font-book">{baseEntry.to(val => currencyFormatter.format(val))}</animated.span>
+											) : (
+												<span className="font-book">{currencyFormatter.format(baseEntry.get())}</span>
 											)}
 										</div>
 										<div className="w-full flex justify-between uppercase text-[#CF9763]">
 											<span className="font-bold">Across The Board</span>
 											{isPrizeAnimated ? (
-												<span className="font-book">{currencyFormatter.format(acrossTheBoard.get())}</span>
-											) : (
 												<animated.span className="font-book">{acrossTheBoard.to(val => currencyFormatter.format(val))}</animated.span>
+											) : (
+												<span className="font-book">{currencyFormatter.format(acrossTheBoard.get())}</span>
 											)}
 										</div>
 									</div>
@@ -118,7 +118,7 @@ const Tournaments = () => {
 								</div>
 								<div
 									className="pt-8 pl-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
-									onClick={() => slideToFollowing('next')}
+									onClick={() => moveSlideshow('next')}
 								>
 									<ChevronForward size={24} />
 								</div>

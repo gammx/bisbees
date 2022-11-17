@@ -18,6 +18,22 @@ const tournaments = [
 		thumbnail: '/tournaments/bb/details_thumbnail.png',
 	},
 	{
+		id: 'lc',
+		name: 'Los Cabos',
+		quote: {
+			text: "The \"Little Bisbee's\" is little no more.",
+			by: "Capt. Dave Lear"
+		},
+		birdDeadline: '2023-08-31',
+		startDate: '2023-10-19',
+		endDate: '2023-10-22',
+		baseEntry: 1500,
+		acrossTheBoard: 22500,
+		shadowColors: ['#00FFA3', '#00F0F0'],
+		thumbnail: '/tournaments/lc/details_thumbnail.png',
+		href: '#',
+	},
+	{
 		id: 'ec',
 		name: 'East Cape',
 		quote: {

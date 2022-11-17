@@ -69,7 +69,7 @@ const Tournaments = () => {
 					<animated.img src={tournament.thumbnail} alt="" className="w-[70vw] lg:w-auto z-10" style={thumbnailStyles} />
 					<div
 						className="absolute top-0 left-0 lg:left-auto lg:right-0 w-[250px] sm:w-[370px] h-[250px] sm:h-[350px] rounded-full opacity-40 blur-[150px] transition-colors duration-500"
-						style={{ backgroundColor: tournament.shadowColors[0] }}
+						style={{ backgroundColor: tournament.shadowColors[0], willChange: 'filter' }}
 					></div>
 				</div>
 				<div className="relative flex-1 flex justify-center text-white">
@@ -127,7 +127,7 @@ const Tournaments = () => {
 					</div>
 					<div
 						className="absolute -bottom-24 right-0 w-[250px] sm:w-[300px] h-[250px] sm:h-[300px] rounded-full opacity-40 blur-[150px] transition-colors duration-500"
-						style={{ backgroundColor: tournament.shadowColors[1] }}
+						style={{ backgroundColor: tournament.shadowColors[1], willChange: 'filter' }}
 					></div>
 				</div>
 			</div>

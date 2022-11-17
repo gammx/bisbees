@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import tournaments from '../utils/tournaments';
+import useSlideshowTimer from '../hooks/useSlideshowTimer';
 import { useSpring, animated, config } from 'react-spring';
 import { ChevronBack, ChevronForward } from '@styled-icons/ionicons-outline';
 import { animations } from '../utils/animations';
@@ -32,8 +33,11 @@ const Tournaments = () => {
 		onStart: () => setIsPrizeAnimated(true),
 		onRest: () => setIsPrizeAnimated(false),
 	});
+	const slideshow = useSlideshowTimer({
+		onComplete: () => moveSlideshow('next'),
+	});
 
-	const moveSlideshow = (direction: 'previous' | 'next') => {
+	function moveSlideshow (direction: 'previous' | 'next') {
 		thumbnailApi.start({
 			...animations.slideDown,
 			config: config.stiff,
@@ -60,6 +64,16 @@ const Tournaments = () => {
 		});
 	};
 
+	function goToPrevious () {
+		slideshow.reset();
+		moveSlideshow('previous');
+	};
+
+	function goToNext () {
+		slideshow.reset();
+		moveSlideshow('next');
+	};
+
 	return (
 		<section>
 			<div
@@ -72,7 +86,11 @@ const Tournaments = () => {
 						style={{ backgroundColor: tournament.shadowColors[0], willChange: 'filter' }}
 					></div>
 				</div>
-				<div className="relative flex-1 flex justify-center text-white">
+				<div
+					className="relative flex-1 flex justify-center text-white"
+					onMouseMove={() => slideshow.pause()}
+					onMouseLeave={() => slideshow.play()}
+				>
 					<div className="flex flex-col relative lg:-top-20 max-w-[100%] xs:max-w-[80vw] lg:max-w-[44vw] xl:max-w-[48vw] px-2 xs:px-0 z-10">
 						<animated.div style={headingStyles}>
 							<h1 className="font-medium uppercase -tracking-[0.08em] text-center lg:text-left text-[12vw] lg:text-[7.1vw] xl:text-[8vw]">
@@ -87,7 +105,7 @@ const Tournaments = () => {
 							<div className="flex w-[700px] lg:w-[500px] max-w-[700px]">
 								<div
 									className="pt-8 pr-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
-									onClick={() => moveSlideshow('previous')}
+									onClick={goToPrevious}
 								>
 									<ChevronBack size={24} />
 								</div>
@@ -118,7 +136,7 @@ const Tournaments = () => {
 								</div>
 								<div
 									className="pt-8 pl-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
-									onClick={() => moveSlideshow('next')}
+									onClick={goToNext}
 								>
 									<ChevronForward size={24} />
 								</div>

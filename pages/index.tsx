@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 import Tournaments from '../components/Tournaments';
+import NewsWidget from '../components/NewsWidget';
 
 const heroSlides = [
   { src: '/hero/mantaraya.png', text: "The little Bisbee's ain't so little!" },
@@ -55,6 +56,7 @@ export default function Home() {
       </header>
       <main>
         <Tournaments />
+        <NewsWidget />
       </main>
     </>
   );

@@ -59,6 +59,22 @@ export default function Home() {
         <Tournaments />
         <NewsWidget />
         <SponsorMarquee />
+        <section className="flex items-end h-[550px] bg-cover bg-left sm:bg-center bg-no-repeat px-10 py-16" style={{ backgroundImage: 'url(/start_boat.png)' }}>
+          <div className="w-full flex flex-col md:flex-row justify-between uppercase text-white">
+            <div>
+              <p className="font-brand text-lg sm:text-[2.5vw] lg:text-3xl">BISBEE'S</p>
+              <h1 className="font-black tracking-tighter text-3xl sm:text-[5vw] lg:text-6xl lg:mt-2 mb-2 lg:mb-4">Official Start Boat</h1>
+              <div className="flex space-x-4 md:space-x-0 md:justify-between text-2xs sm:text-[1.3vw] lg:text-sm">
+                <p>32 ft Intrepid</p>
+                <p className="hidden sm:block">Center Console</p>
+                <p>Twin 225hp Yamaha Outboards</p>
+              </div>
+            </div>
+            <div className="flex items-end pt-5 md:pt-0 md:pb-5">
+              <a href="#" className="flex justify-center items-center h-10 sm:h-[6vw] lg:h-16 bg-[#0066FF] text-sm sm:text-[2vw] lg:text-2xl text-white font-bold uppercase px-5 hover:bg-[#0050c9] transition-colors duration-200">Schedule Now!</a>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

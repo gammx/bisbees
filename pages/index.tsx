@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTransition, animated } from '@react-spring/web';
+import Tournaments from '../components/Tournaments';
 
 const heroSlides = [
   { src: '/hero/mantaraya.png', text: "The little Bisbee's ain't so little!" },
@@ -10,19 +11,19 @@ export default function Home() {
   const [heroIndex, setHeroIndex] = useState(0);
 
   const transitions = useTransition(heroIndex, {
-    key: heroIndex,
+    key: (item: number) => item,
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: { duration: 1500 },
     onRest: (_ab, _b, item) => {
-      setTimeout(() => {
-        if (item === heroIndex) {
+      if (item === heroIndex) {
+        setTimeout(() => {
           setHeroIndex(state => (state + 1) % heroSlides.length);
-        }
-      }, 5000);
+        }, 5000);
+      }
     },
-    exitBeforeEnter: true
+    exitBeforeEnter: true,
   });
 
   return (
@@ -38,10 +39,10 @@ export default function Home() {
           </div>
           <div className="min-w-[200px] hidden md:block"></div>
         </div>
-        {transitions((style, i) => (
+        {transitions(({ opacity }, i) => (
           <animated.div
             className="w-full h-full flex items-end justify-between bg-cover bg-center bg-no-repeat absolute top-0 left-0 p-12"
-            style={{ ...style, backgroundImage: `url(${heroSlides[i].src})` }}
+            style={{ opacity, backgroundImage: `url(${heroSlides[i].src})` }}
           >
             <div></div>
             <div
@@ -52,7 +53,9 @@ export default function Home() {
           </animated.div>
         ))}
       </header>
-      <main></main>
+      <main>
+        <Tournaments />
+      </main>
     </>
   );
 }

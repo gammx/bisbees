@@ -4,10 +4,13 @@ import YTWidgetItem from './YTWidgetItem';
 import { LogoYoutube } from '@styled-icons/ionicons-solid';
 import { useSpringCarousel } from 'react-spring-carousel';
 import { useMediaQuery } from "react-responsive";
+import { useComponentHydrated } from 'react-hydration-provider';
 
 const YTWidget = () => {
 	const [isDragging, setIsDragging] = React.useState(false);
-	const isNotMobile = useMediaQuery({ minWidth: 600 });
+	const isHydrated = useComponentHydrated();
+	const matchQuery = useMediaQuery({ minWidth: 600 });
+	const isNotMobile = isHydrated && matchQuery;
 	const {
 		carouselFragment,
 		slideToNextItem,
@@ -63,11 +66,6 @@ const YTWidget = () => {
 				</a>
 			</div>
 			{carouselFragment}
-			{/*<div className="flex space-x-6">
-				{ytvideos.map((item, index) => (
-					<YTWidgetItem key={index} item={item} />
-				))}
-			</div>*/}
 		</section>
 	);
 };

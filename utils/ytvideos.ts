@@ -27,5 +27,19 @@ export default [
 		title: "2019 Bisbee's Black & Blue",
 		thumbnail: 'https://i.ytimg.com/vi/AFuqEvJyuIc/maxresdefault.jpg',
 		thumbnailWebp: 'https://i.ytimg.com/vi_webp/AFuqEvJyuIc/maxresdefault.webp',
+	},
+	{
+		_id: 4,
+		hash: 'AsTcPmecu7Q',
+		title: "2018 Bisbee's Black & Blue Marlin Tournament",
+		thumbnail: 'https://i.ytimg.com/vi/AsTcPmecu7Q/maxresdefault.jpg',
+		thumbnailWebp: 'https://i.ytimg.com/vi_webp/AsTcPmecu7Q/maxresdefault.webp',
+	},
+	{
+		_id: 5,
+		hash: 'WuHKEpdA154',
+		title: "2017 Bisbee's Black & Blue Marlin Tournament",
+		thumbnail: 'https://i.ytimg.com/vi/WuHKEpdA154/maxresdefault.jpg',
+		thumbnailWebp: 'https://i.ytimg.com/vi_webp/WuHKEpdA154/maxresdefault.webp',
 	}
 ] as Video[];

@@ -4,10 +4,12 @@ import { PlayCircle } from '@styled-icons/ionicons-solid';
 
 interface YTWidgetItemProps extends React.HTMLAttributes<HTMLDivElement> {
 	item: Video;
+	isDragging?: boolean;
 }
 
 const YTWidgetItem: React.FC<YTWidgetItemProps> = ({
 	item,
+	isDragging,
 	...props
 }) => {
 	const thumbnailSrc = item.thumbnailWebp || item.thumbnail;
@@ -16,8 +18,10 @@ const YTWidgetItem: React.FC<YTWidgetItemProps> = ({
 	return (
 		<a
 			href={`https://www.youtube.com/watch?v=${item.hash}`}
-			className="relative rounded-xl overflow-hidden cursor-pointer"
 			target="_blank"
+			draggable={false}
+			className="relative rounded-xl overflow-hidden cursor-pointer"
+			onClick={(e) => isDragging ? e.preventDefault() : null}
 		>
 			<picture>
 				<source srcSet={thumbnailSrc} type={thumbnailType} />

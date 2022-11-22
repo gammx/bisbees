@@ -3,6 +3,7 @@ import { useTransition, animated } from '@react-spring/web';
 import Tournaments from '../components/Tournaments';
 import NewsWidget from '../components/NewsWidget';
 import SponsorMarquee from '../components/SponsorMarquee';
+import YTWidget from '../components/YTWidget';
 
 const heroSlides = [
   { src: '/hero/mantaraya.png', text: "The little Bisbee's ain't so little!" },
@@ -75,6 +76,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <YTWidget />
       </main>
     </>
   );

@@ -6,7 +6,7 @@ const SponsorMarquee = () => {
 	const isNotMobile = useMediaQuery({ minWidth: 640 });
 
 	return (
-		<div className="px-6 sm:px-14 md:px-24 xl:px-40 pt-10 pb-16">
+		<div className="px-6 sm:px-10 pt-10 pb-16">
 			<Marquee
 				pauseOnHover
 				gradientWidth={isNotMobile ? 200 : 50}

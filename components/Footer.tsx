@@ -22,7 +22,7 @@ const Footer = () => {
 					</div>
 				</div>
 			)}
-			<div className="flex-1 flex flex-col bg-royale p-10 sm:p-16">
+			<div className="flex-1 flex flex-col bg-royale p-8 sm:p-16">
 				<div className="flex space-x-4 mb-16">
 					{networks.map((network) => (
 						<a

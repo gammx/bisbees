@@ -76,9 +76,7 @@ const Tournaments = () => {
 
 	return (
 		<section>
-			<div
-				className="bg-royale overflow-hidden flex flex-col lg:flex-row lg:space-x-14 lg:justify-center lg:px-16 pt-24 md:pt-40"
-			>
+			<div className="bg-royale overflow-hidden flex flex-col lg:flex-row lg:space-x-14 lg:justify-center lg:px-16 pt-16 pb-16 lg:pb-0 md:pt-40">
 				<div className="relative flex items-center justify-center">
 					<animated.img src={tournament.thumbnail} alt="" className="w-[70vw] lg:w-auto z-10" style={thumbnailStyles} />
 					<div

@@ -5,6 +5,7 @@ import Tournaments from '../components/Tournaments';
 import NewsWidget from '../components/NewsWidget';
 import SponsorMarquee from '../components/SponsorMarquee';
 import YTWidget from '../components/YTWidget';
+import Footer from '../components/Footer';
 
 const heroSlides = [
   { src: '/hero/mantaraya.png', text: "The little Bisbee's ain't so little!" },
@@ -98,6 +99,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

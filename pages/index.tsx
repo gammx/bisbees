@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTransition, animated } from '@react-spring/web';
+import { ArrowForward } from '@styled-icons/ionicons-solid';
 import Tournaments from '../components/Tournaments';
 import NewsWidget from '../components/NewsWidget';
 import SponsorMarquee from '../components/SponsorMarquee';
@@ -77,6 +78,25 @@ export default function Home() {
           </div>
         </section>
         <YTWidget />
+        <section
+          className="h-[450px] bg-cover bg-center bg-no-repeat text-white py-20 px-8 xs:px-16"
+          style={{ backgroundImage: 'url(/newsletter_banner.png)' }}
+        >
+          <div className="flex flex-col space-y-8 mb-8 max-w-[300px]">
+            <h2 className="font-bold text-4xl xs:text-6xl">Join Our Newsletter</h2>
+            <p className="text-sm xs:text-base">Subscribe to stay up to date with the latest news and deals!</p>
+          </div>
+          <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-8 sm:items-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full sm:w-[300px] bg-transparent outline-none border border-white rounded-xl focus:bg-white/20 transition-colors duration-200 py-3 px-5"
+            />
+            <button className="hover:translate-x-1 transition-transform duration-200">
+              <ArrowForward size="1.2rem" />
+            </button>
+          </div>
+        </section>
       </main>
     </>
   );

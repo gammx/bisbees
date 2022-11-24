@@ -20,10 +20,10 @@ module.exports = {
       }
     },
     fontFamily: {
-      'sans': ['Avenir', 'sans-serif'],
-      'book': ['AvenirBook', 'sans-serif'],
-      'display': ['RocGrotesk'],
-      'brand': ['Marcellus']
+      'sans': ['var(--font-avenir)', 'sans-serif'],
+      'book': ['var(--font-avenir-book)', 'sans-serif'],
+      'display': ['var(--font-roc-grotesk)'],
+      'brand': ['var(--font-marcellus)']
     },
   },
   plugins: [],

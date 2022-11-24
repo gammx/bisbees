@@ -15,7 +15,7 @@ const tournaments = [
 		birdDeadline: '2023-08-31',
 		shadowColors: ['#0047FF', '#00B6F0'],
 		href: '#',
-		thumbnail: '/tournaments/bb/details_thumbnail.png',
+		thumbnail: '/tournaments/bb/details_thumbnail',
 	},
 	{
 		id: 'lc',
@@ -30,7 +30,7 @@ const tournaments = [
 		baseEntry: 1500,
 		acrossTheBoard: 22500,
 		shadowColors: ['#00FFA3', '#00F0F0'],
-		thumbnail: '/tournaments/lc/details_thumbnail.png',
+		thumbnail: '/tournaments/lc/details_thumbnail',
 		href: '#',
 	},
 	{
@@ -46,7 +46,7 @@ const tournaments = [
 		baseEntry: 1500,
 		acrossTheBoard: 32000,
 		shadowColors: ['#FF2E00', '#F09000'],
-		thumbnail: '/tournaments/ec/details_thumbnail.png',
+		thumbnail: '/tournaments/ec/details_thumbnail',
 		href: '#',
 	}
 ];

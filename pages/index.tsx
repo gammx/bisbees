@@ -1,9 +1,12 @@
 import { ArrowForward } from '@styled-icons/ionicons-solid';
+import Image from 'next/image';
 import Tournaments from '../components/Tournaments';
 import NewsWidget from '../components/NewsWidget';
 import SponsorMarquee from '../components/SponsorMarquee';
 import YTWidget from '../components/YTWidget';
 import Footer from '../components/Footer';
+import startBoatImageSrc from '../public/start_boat.png';
+import newsletterImageSrc from '../public/newsletter_banner.png';
 
 export default function Home() {
   return (
@@ -27,8 +30,14 @@ export default function Home() {
         <Tournaments />
         <NewsWidget />
         <SponsorMarquee />
-        <section className="flex items-end h-[550px] bg-cover bg-left sm:bg-center bg-no-repeat px-10 py-16" style={{ backgroundImage: 'url(/start_boat.png)' }}>
-          <div className="w-full flex flex-col md:flex-row justify-between uppercase text-white">
+        <section className="relative flex items-end h-[550px] bg-cover bg-left sm:bg-center bg-no-repeat px-10 py-16">
+          <Image
+            fill
+            src={startBoatImageSrc}
+            alt="Bisbee's Official Start Boat"
+            className="absolute top-0 left-0 w-auto h-auto object-cover object-left sm:object-center"
+          />
+          <div className="w-full flex flex-col md:flex-row justify-between uppercase text-white z-10">
             <div>
               <p className="font-brand text-lg sm:text-[2.5vw] lg:text-3xl">BISBEE'S</p>
               <h1 className="font-black tracking-tighter text-3xl sm:text-[5vw] lg:text-6xl lg:mt-2 mb-2 lg:mb-4">Official Start Boat</h1>
@@ -44,15 +53,18 @@ export default function Home() {
           </div>
         </section>
         <YTWidget />
-        <section
-          className="h-[450px] bg-cover bg-center bg-no-repeat text-white py-20 px-8 xs:px-16"
-          style={{ backgroundImage: 'url(/newsletter_banner.png)' }}
-        >
-          <div className="flex flex-col space-y-8 mb-8 max-w-[300px]">
+        <section className="relative w-full flex flex-col h-[450px] text-white py-20 px-8 xs:px-16">
+          <Image
+            fill
+            src={newsletterImageSrc}
+            alt="Girl surfing on a wave"
+            className="absolute top-0 left-0 w-auto h-auto object-cover"
+          />
+          <div className="z-10 flex flex-col space-y-8 mb-8 max-w-[300px]">
             <h2 className="font-bold text-4xl xs:text-6xl">Join Our Newsletter</h2>
             <p className="text-sm xs:text-base">Subscribe to stay up to date with the latest news and deals!</p>
           </div>
-          <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-8 sm:items-center">
+          <div className="z-10 flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-8 sm:items-center">
             <input
               type="email"
               placeholder="Enter your email"

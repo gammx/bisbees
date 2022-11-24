@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import Chip from './UI/Chip';
 import moment from 'moment';
 import type { Article } from '../utils/articles';
@@ -17,7 +18,13 @@ const NewsWidgetArticle: React.FC<NewsWidgetArticleProps> = ({
 
 	return (
 		<article className="flex flex-col xs:flex-row xs:space-x-5 xs:max-h-[150px] w-full">
-			<img src={article.thumbnail} alt="" className="object-cover rounded-lg w-full xs:w-auto h-48 xs:h-auto" />
+			<Image
+				src={article.thumbnail}
+				alt={`${article.title} (thumbnail)`}
+				width={207}
+				height={150}
+				className="object-cover rounded-lg w-full xs:w-auto h-48 xs:h-auto"
+			/>
 			<div className="space-y-3 xs:space-y-5 text-royale">
 				<div className="flex items-center space-x-3 pt-3 xs:pt-0">
 					<Chip>{article.category}</Chip>

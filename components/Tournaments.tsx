@@ -37,7 +37,7 @@ const Tournaments = () => {
 		onComplete: () => moveSlideshow('next'),
 	});
 
-	function moveSlideshow (direction: 'previous' | 'next') {
+	function moveSlideshow(direction: 'previous' | 'next') {
 		thumbnailApi.start({
 			...animations.slideDown,
 			config: config.stiff,
@@ -64,12 +64,12 @@ const Tournaments = () => {
 		});
 	};
 
-	function goToPrevious () {
+	function goToPrevious() {
 		slideshow.reset();
 		moveSlideshow('previous');
 	};
 
-	function goToNext () {
+	function goToNext() {
 		slideshow.reset();
 		moveSlideshow('next');
 	};
@@ -78,7 +78,18 @@ const Tournaments = () => {
 		<section>
 			<div className="bg-royale overflow-hidden flex flex-col lg:flex-row lg:space-x-14 lg:justify-center lg:px-16 pt-16 pb-16 lg:pb-0 md:pt-40">
 				<div className="relative flex items-center justify-center">
-					<animated.img src={tournament.thumbnail} alt="" className="w-[70vw] lg:w-auto z-10" style={thumbnailStyles} />
+					<picture className="z-10">
+						<source srcSet={`${tournament.thumbnail}.webp`} type="image/webp" />
+						<source srcSet={`${tournament.thumbnail}.png`} type="image/png" />
+						<animated.img
+							src={`${tournament.thumbnail}.webp`}
+							alt={`${tournament.name} (thumbnail)`}
+							className="w-[70vw] lg:w-auto"
+							style={thumbnailStyles}
+							width={480}
+							height={512}
+						/>
+					</picture>
 					<div
 						className="absolute top-0 left-0 lg:left-auto lg:right-0 w-[250px] sm:w-[370px] h-[250px] sm:h-[350px] rounded-full opacity-40 blur-[150px] transition-colors duration-500"
 						style={{ backgroundColor: tournament.shadowColors[0], willChange: 'filter' }}

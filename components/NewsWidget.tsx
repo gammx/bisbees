@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Chip from './UI/Chip';
 import NewsWidgetArticle from './NewsWidgetArticle';
 import articlesData from '../utils/articles';
@@ -19,7 +20,13 @@ const NewsWidget = () => {
 				className="flex flex-col lg:flex-row space-y-6 lg:space-x-6 xl:justify-between px-6 sm:px-14 md:px-24 xl:px-40"
 			>
 				<article className="bg-royale text-white rounded-xl flex-1 lg:max-w-[460px] p-3">
-					<img src={lastArticle.thumbnail} alt="" className="w-full rounded-xl object-cover h-64 lg:h-auto" />
+					<Image
+						src={lastArticle.thumbnail}
+						alt={`${lastArticle.title} (thumbnail)`}
+						width={440}
+						height={320}
+						className="w-full rounded-xl object-cover h-64 lg:h-auto"
+					/>
 					<div className="flex flex-col space-y-3 pt-3 px-3 pb-6">
 						<div className="flex items-center space-x-3">
 							<Chip theme="secondary">{lastArticle.category}</Chip>

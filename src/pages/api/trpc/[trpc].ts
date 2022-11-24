@@ -40,6 +40,7 @@ export const appRouter = router({
   ytvideos: procedure
     .query(async () => {
       const videos = await prisma.video.findMany();
+      console.log(videos)
       return { videos: videos.reverse() };
     }),
 });
@@ -64,7 +65,6 @@ export default trpcNext.createNextApiHandler({
     if (ctx?.res && allPublic && allOk && isQuery) {
       // Cache request for 1 day + revalidate once every second
       const ONE_DAY_IN_SECONDS = 60 * 60 * 24;
-      console.log(ONE_DAY_IN_SECONDS)
       return {
         headers: {
           'cache-control': `s-maxage=1, stale-while-revalidate=${ONE_DAY_IN_SECONDS}`,

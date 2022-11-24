@@ -11,7 +11,10 @@ const YTWidget = () => {
 	const [videos, setVideos] = React.useState([{ id: '' }] as Video[]);
 	const { data } = trpc.ytvideos.useQuery(undefined, {
 		refetchOnWindowFocus: false,
-		onSuccess: (data) => setVideos(data.videos),
+		onSuccess: (data) => {
+			console.log(data);
+			setVideos(data.videos)
+		},
 	});
 	const [isDragging, setIsDragging] = React.useState(false);
 	const isHydrated = useComponentHydrated();

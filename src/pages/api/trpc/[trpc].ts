@@ -40,7 +40,6 @@ export const appRouter = router({
   ytvideos: procedure
     .query(async () => {
       const videos = await prisma.video.findMany();
-      console.log(videos)
       return { videos: videos.reverse() };
     }),
 });

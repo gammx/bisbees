@@ -15,7 +15,9 @@ const YTWidgetItem: React.FC<YTWidgetItemProps> = ({
 	const thumbnailSrc = item.thumbnailWebp
 		? `https://i.ytimg.com/vi_webp/${item.hash}/${item.thumbnailWebp}.webp`
 		: `https://i.ytimg.com/vi/${item.hash}/${item.thumbnail}.jpg`;
-
+	
+	if (item.id === '-1') return null;
+	
 	return (
 		<a
 			href={`https://www.youtube.com/watch?v=${item.hash}`}

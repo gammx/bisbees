@@ -9,6 +9,10 @@ const nextConfig = {
         hostname: 'i.ytimg.com',
       }
     ]
+  },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
   }
 }
 

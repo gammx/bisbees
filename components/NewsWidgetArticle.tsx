@@ -28,12 +28,12 @@ const NewsWidgetArticle: React.FC<NewsWidgetArticleProps> = ({
 			<div className="space-y-3 xs:space-y-5 text-royale">
 				<div className="flex items-center space-x-3 pt-3 xs:pt-0">
 					<Chip>{article.category}</Chip>
-					<span className="text-[#849EB9] text-xs">{article.readTime} min read</span>
+					<span className="text-[#475576] text-xs">{article.readTime} min read</span>
 				</div>
 				<h1 className="font-bold text-xl xs:text-lg">{article.title}</h1>
 				<div className="text-2xs flex flex-row space-x-3 xs:space-x-0 xs:flex-col">
 					<p className="font-medium">{article.author.name}</p>
-					<p className="text-[#849EB9]">
+					<p className="text-[#475576]">
 						{creationDate.current.format('MMM DD, YYYY')}
 					</p>
 				</div>

@@ -70,7 +70,7 @@ export default function Home() {
               placeholder="Enter your email"
               className="w-full sm:w-[300px] bg-transparent outline-none border border-white rounded-xl focus:bg-white/20 transition-colors duration-200 py-3 px-5"
             />
-            <button className="hover:translate-x-1 transition-transform duration-200 flex justify-start">
+            <button className="hover:translate-x-1 transition-transform duration-200 flex justify-start" aria-label="Subscribe to Newsletter">
               <ArrowForward size="1.4rem" />
             </button>
           </div>

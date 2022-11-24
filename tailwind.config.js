@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'white': '#f1f1f1',
+        'white': '#FFF',
         'royale': '#000911'
       },
       screens: {

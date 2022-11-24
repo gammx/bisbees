@@ -33,9 +33,10 @@ const Footer = () => {
 				<div className="flex space-x-4 mb-16">
 					{networks.map((network) => (
 						<a
-							key={network.name}
 							target="_blank"
+							key={network.name}
 							href={network.url}
+							aria-label={`Follow us on ${network.name}`}
 							className="w-12 h-12 border border-white rounded-lg flex items-center justify-center text-white hover:border-white/50 transition-colors duration-200"
 						>
 							{<network.icon size={24} />}
@@ -44,22 +45,22 @@ const Footer = () => {
 				</div>
 				<div className="max-w-[620px] space-y-6 xs:space-y-0 grid grid-cols-1 xs:grid-cols-2  text-white text-xs">
 					<div className="flex flex-col space-y-3">
-						<h4 className="uppercase font-bold">Headquarters</h4>
+						<b className="uppercase font-bold">Headquarters</b>
 						<p>5454 Surrey Path, Suite 104 <br /> Frisco, Texas 75034 USA</p>
 					</div>
 					<div className="flex flex-col space-y-3">
-						<h4 className="uppercase font-bold ">Registrations, Payments, Sponsorships</h4>
+						<b className="uppercase font-bold ">Registrations, Payments, Sponsorships</b>
 						<p>1117 Hot Springs Way <br /> Celina, TX 75009 USA</p>
 					</div>
 				</div>
 				<div className="max-w-[620px] bg-[#121921] h-px w-full my-6"></div>
 				<div className="max-w-[620px] space-y-6 xs:space-y-0 grid grid-cols-1 xs:grid-cols-2 text-white text-xs">
 					<div className="flex flex-col space-y-3">
-						<h4 className="uppercase font-bold">Phone</h4>
+						<b className="uppercase font-bold">Phone</b>
 						<p>+1 714 393 6107</p>
 					</div>
 					<div className="flex flex-col space-y-3">
-						<h4 className="uppercase font-bold">Email</h4>
+						<b className="uppercase font-bold">Email</b>
 						<a className="hover:underline" href="mailto:info@bisbees.com">info@bisbees.com</a>
 					</div>
 				</div>

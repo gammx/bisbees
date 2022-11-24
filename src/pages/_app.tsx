@@ -3,8 +3,10 @@ import '~/styles/fonts.scss';
 
 import type { AppProps } from 'next/app';
 import localFont from '@next/font/local';
-import Head from 'next/head'
+import Head from 'next/head';
+import { trpc } from '~/server/utils/trpc';
 
+// Define some fonts to be cached
 const avenirFont = localFont({
   src: [
     { path: './fonts/Avenir/Avenir-Black.woff2', weight: '900', style: 'normal' },
@@ -42,7 +44,7 @@ const rocGroteskFont = localFont({
   variable: '--font-roc-grotesk'
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -58,4 +60,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </main>
     </>
   );
-}
+};
+
+export default trpc.withTRPC(App);

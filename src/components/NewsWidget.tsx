@@ -24,7 +24,7 @@ const NewsWidget = () => {
 				<p className="font-display text-xs xs:text-base">Read our latest news and press releases</p>
 			</div>
 			<div
-				className="flex flex-col lg:flex-row space-y-6 lg:space-x-6 xl:justify-between px-6 sm:px-14 md:px-24 xl:px-40"
+				className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6 xl:justify-between px-6 sm:px-14 md:px-24 xl:px-40"
 			>
 				<article className="bg-royale text-white rounded-xl flex-1 lg:max-w-[460px] p-3">
 					<Image
@@ -32,6 +32,7 @@ const NewsWidget = () => {
 						alt={`${data.lastArticle.title} (thumbnail)`}
 						width={440}
 						height={320}
+						sizes="(max-width: 1024px) 790px, 440px"
 						className="w-full rounded-xl object-cover h-64 lg:h-auto"
 					/>
 					<div className="flex flex-col space-y-3 pt-3 px-3 pb-6">

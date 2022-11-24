@@ -11,7 +11,6 @@ datasource db {
 }
 
 model Article {
-  @@map("articles")
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   thumbnail String
   category  String
@@ -21,11 +20,24 @@ model Article {
   title     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("articles")
 }
 
 model Author {
-  @@map("authors")
   id      String    @id @default(auto()) @map("_id") @db.ObjectId
   name    String
   Article Article[]
+
+  @@map("authors")
+}
+
+model Video {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  hash          String
+  title         String
+  thumbnail     String
+  thumbnailWebp String
+
+  @@map("videos")
 }

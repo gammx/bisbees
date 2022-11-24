@@ -1,12 +1,17 @@
 import React from 'react';
-import ytvideos from '~/utils/ytvideos';
 import YTWidgetItem from './YTWidgetItem';
 import { LogoYoutube } from '@styled-icons/ionicons-solid';
 import { useSpringCarousel } from 'react-spring-carousel';
 import { useMediaQuery } from "react-responsive";
 import { useComponentHydrated } from 'react-hydration-provider';
+import { trpc } from '~/server/utils/trpc';
+import { Video } from '@prisma/client';
 
 const YTWidget = () => {
+	const [videos, setVideos] = React.useState([{}] as Video[]);
+	const { data } = trpc.ytvideos.useQuery(undefined, {
+		onSuccess: (data) => setVideos(data.videos),
+	});
 	const [isDragging, setIsDragging] = React.useState(false);
 	const isHydrated = useComponentHydrated();
 	const matchQuery = useMediaQuery({ minWidth: 600 });
@@ -20,11 +25,11 @@ const YTWidget = () => {
 		withLoop: true,
 		gutter: 24,
 		shouldResizeOnWindowResize: true,
-		items: ytvideos.map((video) => ({
+		items: videos.map((video) => ({
 			id: video.hash,
 			renderItem: (
 				<YTWidgetItem
-					key={video._id}
+					key={video.id}
 					item={video}
 					isDragging={isDragging}
 				/>
@@ -47,7 +52,9 @@ const YTWidget = () => {
 		}, 5000);
 
 		return () => clearInterval(interval);
-	}, [slideToNextItem])
+	}, [slideToNextItem]);
+
+	if (!data) return null;
 
 	return (
 		<section className="px-10 lg:px-20 py-10 sm:py-20 overflow-hidden">

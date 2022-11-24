@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Video } from '~/utils/ytvideos';
+import { Video } from '@prisma/client';
 import { PlayCircle } from '@styled-icons/ionicons-solid';
 
 interface YTWidgetItemProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -11,9 +11,10 @@ interface YTWidgetItemProps extends React.HTMLAttributes<HTMLDivElement> {
 const YTWidgetItem: React.FC<YTWidgetItemProps> = ({
 	item,
 	isDragging,
-	...props
 }) => {
-	const thumbnailSrc = item.thumbnailWebp || item.thumbnail;
+	const thumbnailSrc = item.thumbnailWebp
+		? `https://i.ytimg.com/vi_webp/${item.hash}/${item.thumbnailWebp}.webp`
+		: `https://i.ytimg.com/vi/${item.hash}/${item.thumbnail}.jpg`;
 
 	return (
 		<a
@@ -40,4 +41,4 @@ const YTWidgetItem: React.FC<YTWidgetItemProps> = ({
 	);
 };
 
-export default YTWidgetItem;
+export default React.memo(YTWidgetItem);

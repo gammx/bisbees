@@ -36,7 +36,12 @@ export const appRouter = router({
         lastArticle,
         articles,
       };
-    })
+    }),
+  ytvideos: procedure
+    .query(async () => {
+      const videos = await prisma.video.findMany();
+      return { videos: videos.reverse() };
+    }),
 });
 
 export type AppRouter = typeof appRouter;

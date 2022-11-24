@@ -1,5 +1,5 @@
-import '../styles/globals.css';
-import '../styles/fonts.scss';
+import '~/styles/globals.css';
+import '~/styles/fonts.scss';
 
 import type { AppProps } from 'next/app';
 import localFont from '@next/font/local';

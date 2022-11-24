@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Chip from './UI/Chip';
 import NewsWidgetArticle from './NewsWidgetArticle';
-import articlesData from '../utils/articles';
+import articlesData from '~/utils/articles';
 import moment from 'moment';
 
 const lastArticle = articlesData[articlesData.length - 1];

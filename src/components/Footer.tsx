@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import networks from '../utils/networks';
+import networks from '~/utils/networks';
+import marlinSidebarSrc from '~public/marlin_sidebar.png';
+import marlinSidebarMobileSrc from '~public/marlin_sidebar_horizontal.png';
 import { useMediaQuery } from "react-responsive";
 import { useComponentHydrated } from 'react-hydration-provider';
-import marlinSidebarSrc from '../public/marlin_sidebar.png';
-import marlinSidebarMobileSrc from '../public/marlin_sidebar_horizontal.png';
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();

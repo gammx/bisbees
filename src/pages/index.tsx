@@ -1,12 +1,12 @@
 import { ArrowForward } from '@styled-icons/ionicons-solid';
 import Image from 'next/image';
-import Tournaments from '../components/Tournaments';
-import NewsWidget from '../components/NewsWidget';
-import SponsorMarquee from '../components/SponsorMarquee';
-import YTWidget from '../components/YTWidget';
-import Footer from '../components/Footer';
-import startBoatImageSrc from '../public/start_boat.png';
-import newsletterImageSrc from '../public/newsletter_banner.png';
+import Tournaments from '~/components/Tournaments';
+import NewsWidget from '~/components/NewsWidget';
+import SponsorMarquee from '~/components/SponsorMarquee';
+import YTWidget from '~/components/YTWidget';
+import Footer from '~/components/Footer';
+import startBoatImageSrc from '~public/start_boat.png';
+import newsletterImageSrc from '~public/newsletter_banner.png';
 
 export default function Home() {
   return (

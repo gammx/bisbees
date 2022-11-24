@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Video } from '../utils/ytvideos';
+import { Video } from '~/utils/ytvideos';
 import { PlayCircle } from '@styled-icons/ionicons-solid';
 
 interface YTWidgetItemProps extends React.HTMLAttributes<HTMLDivElement> {

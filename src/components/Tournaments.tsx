@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from 'moment';
-import tournaments from '../utils/tournaments';
-import useSlideshowTimer from '../hooks/useSlideshowTimer';
+import tournaments from '~/utils/tournaments';
+import useSlideshowTimer from '~/hooks/useSlideshowTimer';
+import { animations } from '~/utils/animations';
 import { useSpring, animated, config } from 'react-spring';
 import { ChevronBack, ChevronForward } from '@styled-icons/ionicons-outline';
-import { animations } from '../utils/animations';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',

@@ -1,5 +1,5 @@
 import React from 'react';
-import ytvideos from '../utils/ytvideos';
+import ytvideos from '~/utils/ytvideos';
 import YTWidgetItem from './YTWidgetItem';
 import { LogoYoutube } from '@styled-icons/ionicons-solid';
 import { useSpringCarousel } from 'react-spring-carousel';

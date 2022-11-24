@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
-import sponsors from '../utils/sponsors';
+import sponsors from '~/utils/sponsors';
 import { useMediaQuery } from "react-responsive";
 
 const SponsorMarquee = () => {

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import Chip from './UI/Chip';
 import moment from 'moment';
-import type { Article } from '../utils/articles';
+import type { Article } from '~/utils/articles';
 
 type HTMLArticleProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 

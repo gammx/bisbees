@@ -2,7 +2,21 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import Chip from './UI/Chip';
 import moment from 'moment';
-import type { Article } from '~/utils/articles';
+
+interface Article {
+	id: string;
+	thumbnail: string;
+	category: string;
+	readTime: number;
+	author: Author;
+	createdAt: string | Date;
+	title: string;
+}
+
+interface Author {
+	id: string;
+	name: string;
+}
 
 type HTMLArticleProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 
@@ -42,4 +56,4 @@ const NewsWidgetArticle: React.FC<NewsWidgetArticleProps> = ({
 	);
 };
 
-export default NewsWidgetArticle;
+export default React.memo(NewsWidgetArticle);

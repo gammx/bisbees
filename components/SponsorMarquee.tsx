@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
 import sponsors from '../utils/sponsors';
 import { useMediaQuery } from "react-responsive";
 
@@ -13,9 +14,11 @@ const SponsorMarquee = () => {
 			>
 				{sponsors.map((sponsor, index) => (
 					<a key={index} href={sponsor.href} target="_blank" className="mx-6">
-						<img
+						<Image
 							src={sponsor.icon}
 							alt={`${sponsor.name} (logo)`}
+							height={64}
+							width={64}
 						/>
 					</a>
 				))}

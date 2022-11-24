@@ -59,7 +59,7 @@ const YTWidget = () => {
 				<a
 					target="_blank"
 					href="https://www.youtube.com/channel/UCI7o4HvgUMyt0qQxr61K_jg?sub_confirmation=1"
-					className="bg-[#FF0000] hover:bg-[#be3030] text-white uppercase font-display font-bold text-xs sm:text-base flex items-center justify-center space-x-2 h-10 sm:h-12 rounded-lg px-4 sm:px-5 transition-colors duration-200"
+					className="bg-[#EB0000] hover:bg-[#be3030] text-white uppercase font-display font-bold text-xs sm:text-base flex items-center justify-center space-x-2 h-10 sm:h-12 rounded-lg px-4 sm:px-5 transition-colors duration-200"
 				>
 					<LogoYoutube size={isNotMobile ? '1.2rem' : '1rem'} className="relative -top-[1px]" />
 					<span>Subscribe</span>

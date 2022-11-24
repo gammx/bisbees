@@ -57,6 +57,7 @@ const YTWidget = () => {
 					<p className="font-display text-xs sm:text-[1.5vw] lg:text-base">Go now and stop missing the latest videos</p>
 				</div>
 				<a
+					rel="noreferrer"
 					target="_blank"
 					href="https://www.youtube.com/channel/UCI7o4HvgUMyt0qQxr61K_jg?sub_confirmation=1"
 					className="bg-[#EB0000] hover:bg-[#be3030] text-white uppercase font-display font-bold text-xs sm:text-base flex items-center justify-center space-x-2 h-10 sm:h-12 rounded-lg px-4 sm:px-5 transition-colors duration-200"

@@ -14,8 +14,8 @@ export default function Home() {
       <header className="relative min-h-screen w-full flex items-end overflow-hidden text-white p-12 bg-royale">
         <div className="flex justify-between w-full items-center font-book z-10">
           <div>
-            <p className="font-brand text-3xl md:text-5xl">BISBEE'S</p>
-            <p className="text-sm md:text-base">The world's richest tournaments.</p>
+            <p className="font-brand text-3xl md:text-5xl">BISBEE&apos;S</p>
+            <p className="text-sm md:text-base">The world&apos;s richest tournaments.</p>
           </div>
           <div className="hidden md:block">
             <a href="#" className="underline uppercase">Register</a>

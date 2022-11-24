@@ -106,7 +106,7 @@ const Tournaments = () => {
 								{tournament.name}
 							</h1>
 							<div className="-tracking-[0.08em] font-book w-full flex items-center flex-col md:flex-row md:justify-between text-xs xl:text-base">
-								<blockquote><span className="italic">"{tournament.quote.text}"</span> — {tournament.quote.by}</blockquote>
+								<blockquote><span className="italic">&quot;{tournament.quote.text}&quot;</span> — {tournament.quote.by}</blockquote>
 								<span>{dates.start.format('MMMM DD')} — {dates.end.format('DD, YYYY')}</span>
 							</div>
 						</animated.div>
@@ -143,6 +143,7 @@ const Tournaments = () => {
 									</div>
 									<a
 										href={tournament.href}
+										rel="noreferrer"
 										target="_blank"
 										className="w-full h-10 flex items-center justify-center font-bold uppercase rounded-md border border-white mt-12 transition-colors duration-100 hover:bg-white hover:text-royale"
 									>

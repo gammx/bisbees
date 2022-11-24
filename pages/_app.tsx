@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Bisbee's —</title>
+        <title>Bisbee&apos;s —</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="The World's Richest Tournaments" />
         <meta name="keywords" content="bisbees,fishing,gammx" />

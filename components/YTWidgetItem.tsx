@@ -18,6 +18,7 @@ const YTWidgetItem: React.FC<YTWidgetItemProps> = ({
 	return (
 		<a
 			href={`https://www.youtube.com/watch?v=${item.hash}`}
+			rel="noreferrer"
 			target="_blank"
 			draggable={false}
 			className="relative rounded-xl overflow-hidden cursor-pointer"

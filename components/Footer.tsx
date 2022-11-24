@@ -24,8 +24,8 @@ const Footer = () => {
 						className="absolute top-0 left-0 w-full h-full object-cover"
 					/>
 					<div className="lg:text-center z-10">
-						<p className="font-brand uppercase text-3xl sm:text-5xl mb-1 sm:mb-3">Bisbee's</p>
-						<p className="text-xs">The World's Richest Tournaments</p>
+						<p className="font-brand uppercase text-3xl sm:text-5xl mb-1 sm:mb-3">Bisbee&apos;s</p>
+						<p className="text-xs">The World&apos;s Richest Tournaments</p>
 					</div>
 				</div>
 			)}
@@ -34,6 +34,7 @@ const Footer = () => {
 					{networks.map((network) => (
 						<a
 							target="_blank"
+							rel="noreferrer"
 							key={network.name}
 							href={network.url}
 							aria-label={`Follow us on ${network.name}`}
@@ -73,7 +74,12 @@ const Footer = () => {
 							<a href="#" className="opacity-50 hover:opacity-80 transition-opacity duration-200">Privacy and Policy</a>
 						</div>
 
-						<a href="https://gammx.tech" target="_blank" className="self-center sm:self-auto pt-20 sm:pt-0 pb-6 sm:pb-0 hover:opacity-80">
+						<a
+							href="https://gammx.tech"
+							rel="noreferrer"
+							target="_blank"
+							className="self-center sm:self-auto pt-20 sm:pt-0 pb-6 sm:pb-0 hover:opacity-80"
+						>
 							<img src="/22.svg" alt="GAMMX (logo)" width={47} height={17} />
 						</a>
 						<p className="flex xs:hidden font-book text-xs self-center">{currentYear} &copy; All Rights Reserved</p>

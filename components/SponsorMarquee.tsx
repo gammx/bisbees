@@ -13,7 +13,7 @@ const SponsorMarquee = () => {
 				gradientWidth={isNotMobile ? 200 : 50}
 			>
 				{sponsors.map((sponsor, index) => (
-					<a key={index} href={sponsor.href} target="_blank" className="mx-6">
+					<a key={index} href={sponsor.href} rel="noreferrer" target="_blank" className="mx-6">
 						<Image
 							src={sponsor.icon}
 							alt={`${sponsor.name} (logo)`}

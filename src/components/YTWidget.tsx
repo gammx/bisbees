@@ -8,8 +8,9 @@ import { trpc } from '~/server/utils/trpc';
 import { Video } from '@prisma/client';
 
 const YTWidget = () => {
-	const [videos, setVideos] = React.useState([{}] as Video[]);
+	const [videos, setVideos] = React.useState([{ id: '' }] as Video[]);
 	const { data } = trpc.ytvideos.useQuery(undefined, {
+		refetchOnWindowFocus: false,
 		onSuccess: (data) => setVideos(data.videos),
 	});
 	const [isDragging, setIsDragging] = React.useState(false);

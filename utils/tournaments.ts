@@ -14,7 +14,7 @@ const tournaments = [
 		acrossTheBoard: 71500,
 		birdDeadline: '2023-08-31',
 		shadowColors: ['#0047FF', '#00B6F0'],
-		href: '#',
+		href: 'https://www.bisbees.com/Tournament/BisbeesBlackAndBlue',
 		thumbnail: '/tournaments/bb/details_thumbnail',
 	},
 	{
@@ -31,7 +31,7 @@ const tournaments = [
 		acrossTheBoard: 22500,
 		shadowColors: ['#00FFA3', '#00F0F0'],
 		thumbnail: '/tournaments/lc/details_thumbnail',
-		href: '#',
+		href: 'https://www.bisbees.com/Tournament/BisbeesLosCabosOffshore',
 	},
 	{
 		id: 'ec',
@@ -47,7 +47,7 @@ const tournaments = [
 		acrossTheBoard: 32000,
 		shadowColors: ['#FF2E00', '#F09000'],
 		thumbnail: '/tournaments/ec/details_thumbnail',
-		href: '#',
+		href: 'https://www.bisbees.com/Tournament/BisbeesEastCape',
 	}
 ];
 

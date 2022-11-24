@@ -141,7 +141,13 @@ const Tournaments = () => {
 											)}
 										</div>
 									</div>
-									<a href="" className="w-full h-10 flex items-center justify-center font-bold uppercase rounded-md border border-white mt-12 transition-colors duration-100 hover:bg-white hover:text-royale">Tell Me More</a>
+									<a
+										href={tournament.href}
+										target="_blank"
+										className="w-full h-10 flex items-center justify-center font-bold uppercase rounded-md border border-white mt-12 transition-colors duration-100 hover:bg-white hover:text-royale"
+									>
+										Tell Me More
+									</a>
 								</div>
 								<div
 									className="pt-8 pl-4 sm:px-9 opacity-30 hover:opacity-100 transition-opacity duration-200 cursor-pointer"

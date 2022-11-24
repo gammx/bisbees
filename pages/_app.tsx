@@ -3,6 +3,7 @@ import '../styles/fonts.scss';
 
 import type { AppProps } from 'next/app';
 import localFont from '@next/font/local';
+import Head from 'next/head'
 
 const avenirFont = localFont({
   src: [
@@ -43,8 +44,18 @@ const rocGroteskFont = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${avenirFont.variable} ${avenirBookFont.variable} ${marcellusFont.variable} ${rocGroteskFont.variable} font-sans`}>
-      <Component {...pageProps} />
-    </main>
+    <>
+      <Head>
+        <title>Bisbee's —</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="The World's Richest Tournaments" />
+        <meta name="keywords" content="bisbees,fishing,gammx" />
+        <meta name="author" content="GAMMX" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <main className={`${avenirFont.variable} ${avenirBookFont.variable} ${marcellusFont.variable} ${rocGroteskFont.variable} font-sans`}>
+        <Component {...pageProps} />
+      </main>
+    </>
   );
 }

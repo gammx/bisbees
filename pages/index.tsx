@@ -39,7 +39,7 @@ export default function Home() {
           />
           <div className="w-full flex flex-col md:flex-row justify-between uppercase text-white z-10">
             <div>
-              <p className="font-brand text-lg sm:text-[2.5vw] lg:text-3xl">BISBEE'S</p>
+              <p className="font-brand text-lg sm:text-[2.5vw] lg:text-3xl">BISBEE&apos;S</p>
               <h1 className="font-black tracking-tighter text-3xl sm:text-[5vw] lg:text-6xl lg:mt-2 mb-2 lg:mb-4">Official Start Boat</h1>
               <div className="flex space-x-4 md:space-x-0 md:justify-between text-2xs sm:text-[1.3vw] lg:text-sm">
                 <p>32 ft Intrepid</p>

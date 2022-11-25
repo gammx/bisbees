@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 
 interface SlideshowTimerOptions {
+	/** A callback to run when the timer is complete. */
 	onComplete: () => void;
 }
 
+/** A hook that returns a set of functions to control a slideshow timer. */
 export default function useSlideshowTimer({ onComplete }: SlideshowTimerOptions) {
 	const [timer, setTimer] = useState(0);
 	const [pause, setPause] = useState(false);
@@ -39,7 +41,7 @@ export default function useSlideshowTimer({ onComplete }: SlideshowTimerOptions)
 		return () => {
 			interval.current && clearInterval(interval.current);
 		};
-	}, [pause, timer]);
+	}, [pause, timer, onComplete]);
 
 	return {
 		timer,

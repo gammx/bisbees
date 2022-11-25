@@ -8,6 +8,8 @@ import { useComponentHydrated } from 'react-hydration-provider';
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
+	// Only work with media queries when the component is hydrated
+	// See: https://github.com/yocontra/react-responsive/issues/298
 	const isHydrated = useComponentHydrated();
 	const isNotMobile = useMediaQuery({ minWidth: 1024 });
 	const footerImageSrc = isNotMobile ? marlinSidebarSrc : marlinSidebarMobileSrc;

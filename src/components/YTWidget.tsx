@@ -8,6 +8,7 @@ import { trpc } from '~/server/utils/trpc';
 import { Video } from '@prisma/client';
 
 const YTWidget = () => {
+	// We use -1 as a placeholder for the loading state
 	const [videos, setVideos] = React.useState([{ id: '-1' }] as Video[]);
 	const { data } = trpc.ytvideos.useQuery(undefined, {
 		refetchOnWindowFocus: false,
@@ -15,7 +16,10 @@ const YTWidget = () => {
 			setVideos(data.videos)
 		},
 	});
+	// We use this state to stop the video link from being clickable while is being dragged
 	const [isDragging, setIsDragging] = React.useState(false);
+	// Only work with media queries when the component is hydrated
+	// See: https://github.com/yocontra/react-responsive/issues/298
 	const isHydrated = useComponentHydrated();
 	const matchQuery = useMediaQuery({ minWidth: 600 });
 	const isNotMobile = isHydrated && matchQuery;

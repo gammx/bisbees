@@ -20,7 +20,9 @@ const Tournaments = () => {
 	});
 	const [thumbnailStyles, thumbnailApi] = useSpring(() => (animations.slideUp));
 	const [headingStyles, headingApi] = useSpring(() => (animations.scaleIn));
-	// Animated currency values
+	// Workaround for react-spring issue with formatted strings
+	// We replace the animated values with static ones when the animations are done
+	// See: https://github.com/pmndrs/react-spring/issues/1660
 	const [isEntryAnimated, setIsEntryAnimated] = React.useState(true);
 	const [isPrizeAnimated, setIsPrizeAnimated] = React.useState(true);
 	const { val: baseEntry } = useSpring({
@@ -49,6 +51,7 @@ const Tournaments = () => {
 			...animations.scaleOut,
 			config: config.stiff,
 			onResolve: () => {
+				// TODO: fix changing data when animation is not complete
 				headingApi.start({ ...animations.scaleIn, config: config.molasses });
 				const currentIndex = tournaments.indexOf(tournament);
 				const prevIndex = currentIndex === 0 ? tournaments.length - 1 : currentIndex - 1;
@@ -64,6 +67,7 @@ const Tournaments = () => {
 		});
 	};
 
+	// Reset the slideshow so the times goes back to 0
 	function goToPrevious() {
 		slideshow.reset();
 		moveSlideshow('previous');

@@ -5,8 +5,8 @@ const tournaments = [
 		id: 'bb',
 		name: 'Black & Blue',
 		quote: {
-			text: "It's the wildest tournament I've ever seen!",
-			by: "El Xocas"
+			text: "Bring me a damn fish!",
+			by: "Wayne Bisbee"
 		},
 		startDate: '2023-10-24',
 		endDate: '2023-10-28',
@@ -37,8 +37,8 @@ const tournaments = [
 		id: 'ec',
 		name: 'East Cape',
 		quote: {
-			text: "Vintage & classy, loving the old Mexico",
-			by: 'Don Cheto'
+			text: "The kick-off to the next-gen tournaments.",
+			by: 'Tricia Bisbee'
 		},
 		birdDeadline: '2023-06-30',
 		startDate: '2023-08-01',

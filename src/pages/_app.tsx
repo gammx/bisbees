@@ -54,6 +54,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="keywords" content="bisbees,fishing,gammx" />
         <meta name="author" content="GAMMX" />
         <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <main className={`${avenirFont.variable} ${avenirBookFont.variable} ${marcellusFont.variable} ${rocGroteskFont.variable} font-sans`}>
         <Component {...pageProps} />

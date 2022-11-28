@@ -82,7 +82,7 @@ const Footer = () => {
 							target="_blank"
 							className="self-center sm:self-auto pt-20 sm:pt-0 pb-6 sm:pb-0 hover:opacity-80"
 						>
-							<img src="/22.svg" alt="GAMMX (logo)" width={47} height={17} />
+							<img src="/22.svg" alt="GAMMX (logo)" width={22} height={22} />
 						</a>
 						<p className="flex xs:hidden font-book text-xs self-center">{currentYear} &copy; All Rights Reserved</p>
 					</div>
